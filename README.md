@@ -1,7 +1,3 @@
-Harika, projenin profesyonel bir vitrine sahip olması için kapsamlı bir `README.md` içeriği hazırladım. Bu dosya, hem projenin teknik derinliğini yansıtacak hem de 11. hafta değerlendirme çizelgesindeki "Gereksinim Analizi ve Araç Seçimi" kriterlerini raporlamış olacaktır.
-
-Aşağıdaki içeriği kopyalayıp GitHub deponuzdaki `README.md` dosyasına yapıştırabilirsiniz:
-
 ---
 
 # SecureChat: Uçtan Uca ve Katmanlı Şifreleme (E2EE & Nested Encryption)
