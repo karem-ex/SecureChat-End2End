@@ -59,4 +59,29 @@ python client/client_main.py
 ```
 
 ---
+
+### Proje Akış Şeması
+```
+sequenceDiagram
+    participant C1 as Client-A (Gönderici)
+    participant S as Kali Server (VM1)
+    participant C2 as Client-B (Alıcı)
+
+    Note over C1: 1. Mesaj Oluşturma (Plaintext)
+    Note over C1: 2. E2EE: AES-256 (Client-B Public Key ile)
+    C1->>C1: İç Zarf (Encrypted Payload)
+    
+    Note over C1: 3. Transport: AES-256 (Server Key ile)
+    C1->>C1: Dış Zarf (Nested Encryption)
+    
+    C1->>S: TCP Socket (Port: 5050) - [IP: 192.168.56.10]
+    
+    Note over S: 4. Sunucu Dış Zarfı Açar (Server Private Key)
+    Note over S: 5. SQLite Sorgusu: Nickname -> IP (192.168.56.11)
+    S->>C2: Şifreli İç Zarfı Yönlendir (Zero-Knowledge)
+    
+    Note over C2: 6. Alıcı İç Zarfı Açar (Client-B Private Key)
+    Note over C2: 7. Mesaj Çözme (Decryption)
+    Note over C2: 8. GUI Görüntüleme (UTF-8)
+```
 **Not:** Bu proje, 11-15. haftalar arası haftalık değerlendirme çizelgesindeki kriterlere %100 uyumlu olarak geliştirilmektedir.
