@@ -84,4 +84,14 @@ sequenceDiagram
     Note over C2: 7. Mesaj Çözme (Decryption)
     Note over C2: 8. GUI Görüntüleme (UTF-8)
 ```
+### Akış Şeması için Teknik Detaylar
+Veri Formatı: Mesajlar ağ üzerinde base64 formatında veya byte dizisi olarak taşınacaktır.
+
+Encapsulation (Kapsülleme): Veri iki katmanlıdır; dış katman sunucuya yönlendirme bilgisi verirken, iç katman sadece son alıcı tarafından okunabilir (E2EE).
+
+
+Socket Mimarisi: İletişim, Python socket kütüphanesi kullanılarak AF_INET (IPv4) ve SOCK_STREAM (TCP) protokolleri üzerinden sağlanacaktır.
+
+Hata Kontrolü: İlerleyen haftalarda (14. hafta) bu akışa SHA-256 özet kontrolü (Hash) eklenecektir.
+
 **Not:** Bu proje, 11-15. haftalar arası haftalık değerlendirme çizelgesindeki kriterlere %100 uyumlu olarak geliştirilmektedir.
