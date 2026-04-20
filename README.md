@@ -61,7 +61,7 @@ python client/client_main.py
 ---
 
 ### Proje Akış Şeması
-```
+```mermaid
 sequenceDiagram
     participant C1 as Client-A (Gönderici)
     participant S as Kali Server (VM1)
@@ -83,5 +83,4 @@ sequenceDiagram
     Note over C2: 6. Alıcı İç Zarfı Açar (Client-B Private Key)
     Note over C2: 7. Mesaj Çözme (Decryption)
     Note over C2: 8. GUI Görüntüleme (UTF-8)
-```
 **Not:** Bu proje, 11-15. haftalar arası haftalık değerlendirme çizelgesindeki kriterlere %100 uyumlu olarak geliştirilmektedir.
