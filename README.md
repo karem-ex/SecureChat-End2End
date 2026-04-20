@@ -85,13 +85,16 @@ sequenceDiagram
     Note over C2: 8. GUI Görüntüleme (UTF-8)
 ```
 ### Akış Şeması için Teknik Detaylar
-Veri Formatı: Mesajlar ağ üzerinde base64 formatında veya byte dizisi olarak taşınacaktır.
+Çift Katmanlı Şifreleme (Nested Encryption): Mesajlar, "Zarf İçinde Zarf" mantığıyla önce uçtan uca (E2EE) alıcının anahtarıyla, ardından taşıma güvenliği için sunucunun AES-256 anahtarıyla şifrelenir.
 
-Encapsulation (Kapsülleme): Veri iki katmanlıdır; dış katman sunucuya yönlendirme bilgisi verirken, iç katman sadece son alıcı tarafından okunabilir (E2EE).
+Sıfır Bilgi Protokolü (Zero-Knowledge): Sunucu, dış şifreleme katmanını sadece yönlendirme verisine (Alıcı Nickname) ulaşmak için açar; içteki mesaj içeriğine erişemez.
 
+Kimlik Tabanlı Keşif (Identity-Based Discovery): İstemciler birbirlerine IP adresi üzerinden değil, sunucu tarafındaki SQLite veritabanında eşlenen benzersiz takma adlar (Nickname) üzerinden bağlanır.
 
-Socket Mimarisi: İletişim, Python socket kütüphanesi kullanılarak AF_INET (IPv4) ve SOCK_STREAM (TCP) protokolleri üzerinden sağlanacaktır.
+Ağ Mimarisi: İletişim, Python socket kütüphanesi kullanılarak TCP protokolü üzerinden, izole bir Host-only Adapter ağında (Kali VM & Client VM & Host) gerçekleştirilir.
 
-Hata Kontrolü: İlerleyen haftalarda (14. hafta) bu akışa SHA-256 özet kontrolü (Hash) eklenecektir.
+Veri Güvenliği ve TTL: Mesajlar sunucu belleğinde veya veritabanında kalıcı olarak değil, belirlenen Yaşam Süresi (TTL) dolana kadar BLOB formatında tutulur ve ardından otomatik olarak imha edilir.
+
+Geliştirme Yığını: Güvenlik operasyonları için PyCryptodome, modern ve hızlı arayüz için CustomTkinter kütüphaneleri tercih edilmiştir.
 
 **Not:** Bu proje, 11-15. haftalar arası haftalık değerlendirme çizelgesindeki kriterlere %100 uyumlu olarak geliştirilmektedir.
