@@ -8,7 +8,7 @@ SecureChat, modern siber güvenlik protokollerini temel alan, üniversite bitirm
 
 Bu hafta, projenin teknoloji yığını belirlenmiş, mimari akış şeması oluşturulmuş ve temel kullanıcı arayüzü (GUI) tasarlanmıştır
 
-### 🛠 Teknoloji Yığını ve Araç Seçimi
+### Teknoloji Yığını ve Araç Seçimi
 Projenin gereksinim analizi doğrultusunda aşağıdaki teknolojiler seçilmiştir.
 * **Programlama Dili:** Python 3.10+ 
 * **Kriptografi Kütüphanesi:** `pycryptodome` (AES-256, RSA ve SHA-256 işlemleri için) 
