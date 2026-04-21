@@ -11,7 +11,7 @@ Bu hafta, projenin teknoloji yığını belirlenmiş, mimari akış şeması olu
 ### Teknoloji Yığını ve Araç Seçimi
 Projenin gereksinim analizi doğrultusunda aşağıdaki teknolojiler seçilmiştir.
 * **Programlama Dili:** Python 3.10+ 
-* **Kriptografi Kütüphanesi:** `pycryptodome` (AES-256, RSA ve SHA-256 işlemleri için) 
+* **Kriptografi Kütüphanesi:** `cryptography` (AES-256, RSA ve SHA-256 işlemleri için) 
 * **Arayüz (GUI):** `CustomTkinter` (Modern ve modüler bir kullanıcı deneyimi için) 
 * **Veritabanı:** `SQLite3` (Sunucu tarafında dinamik Identity-Based Discovery ve TTL yönetimi için)
 * **Ağ Bağlantısı:** Python `socket` ve `threading` kütüphaneleri
